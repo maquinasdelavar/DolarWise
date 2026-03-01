@@ -11,6 +11,9 @@ import { RiveLoading } from './RiveLoading';
 // Registro dos componentes do Chart.js
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler);
 
+// URL da API. Usa uma variável de ambiente para produção, com fallback para localhost.
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+
 function App() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -22,7 +25,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/api/quotes');
+        const response = await axios.get(`${API_BASE_URL}/api/quotes`);
         if (response.data.success) {
           setData(response.data.data);
         }
