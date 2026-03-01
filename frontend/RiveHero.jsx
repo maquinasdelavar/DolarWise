@@ -11,7 +11,7 @@ export const RiveHero = () => {
       backgroundColor: '#059669',
       position: 'relative'
     }}>
-      <img src="as.jpg" alt="Destaque DollarWise" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+      <img src="/as.jpg" alt="Destaque DollarWise" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
     </div>
   );
 };
